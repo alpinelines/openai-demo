@@ -1,68 +1,74 @@
 # RESTful API Node Server Boilerplate
 
-[![Build Status](https://travis-ci.org/hagopj13/node-express-boilerplate.svg?branch=master)](https://travis-ci.org/hagopj13/node-express-boilerplate)
-[![Coverage Status](https://coveralls.io/repos/github/hagopj13/node-express-boilerplate/badge.svg?branch=master)](https://coveralls.io/github/hagopj13/node-express-boilerplate?branch=master)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+A simple API to save and execute ChatGPT, StableDiffusion API, and OpenJourney prompts. The API is built with ExpressJS and uses MongoDB w/ Mongoose with Passport for user authentication. Additionally, documentation is provided by Swagger. 
 
-A boilerplate/starter project for quickly building RESTful APIs using Node.js, Express, and Mongoose.
+The project provides routes for managing users, prompt templates, and integration w/ generative AI APIs including: 
+ - OpenAI API
+ - StableDiffusion API
+ - OpenJourney
 
-By running a single command, you will get a production-ready Node.js app installed and fully configured on your machine. The app comes with many built-in features, such as authentication using JWT, request validation, unit and integration tests, continuous integration, docker support, API documentation, pagination, etc. For more details, check the features list below.
+The repo is intended to be used as a starter for multiple future projects. 
 
 ## Quick Start
 
-To create a project, simply run:
-
-```bash
-npx create-nodejs-express-app <project-name>
+Copy .env.example and provide your API keys
+```
+cp .env.example .env
 ```
 
-Or
-
-```bash
-npm init nodejs-express-app <project-name>
+Install dependencies
 ```
-
-## Manual Installation
-
-If you would still prefer to do the installation manually, follow these steps:
-
-Clone the repo:
-
-```bash
-git clone --depth 1 https://github.com/hagopj13/node-express-boilerplate.git
-cd node-express-boilerplate
-npx rimraf ./.git
-```
-
-Install the dependencies:
-
-```bash
 yarn install
 ```
 
-Set the environment variables:
+Start the dev server
+```
+yarn dev
+```
 
-```bash
-cp .env.example .env
+To run with docker
+```
+yarn docker:dev
+```
 
-# open .env and modify the environment variables (if needed)
+For tests run
+```
+yarn tests
+```
+
+Or, with docker
+```
+yarn docker:test
+```
+
+For documentation run
+```
+yarn docs
 ```
 
 ## Table of Contents
 
-- [Features](#features)
-- [Commands](#commands)
-- [Environment Variables](#environment-variables)
-- [Project Structure](#project-structure)
-- [API Documentation](#api-documentation)
-- [Error Handling](#error-handling)
-- [Validation](#validation)
-- [Authentication](#authentication)
-- [Authorization](#authorization)
-- [Logging](#logging)
-- [Custom Mongoose Plugins](#custom-mongoose-plugins)
-- [Linting](#linting)
-- [Contributing](#contributing)
+- [RESTful API Node Server Boilerplate](#restful-api-node-server-boilerplate)
+  - [Quick Start](#quick-start)
+  - [Table of Contents](#table-of-contents)
+  - [Features](#features)
+  - [Commands](#commands)
+  - [Environment Variables](#environment-variables)
+  - [Project Structure](#project-structure)
+  - [API Documentation](#api-documentation)
+    - [API Endpoints](#api-endpoints)
+  - [Error Handling](#error-handling)
+  - [Validation](#validation)
+  - [Authentication](#authentication)
+  - [Authorization](#authorization)
+  - [Logging](#logging)
+  - [Custom Mongoose Plugins](#custom-mongoose-plugins)
+    - [toJSON](#tojson)
+    - [paginate](#paginate)
+  - [Linting](#linting)
+  - [Contributing](#contributing)
+  - [Inspirations](#inspirations)
+  - [License](#license)
 
 ## Features
 
